@@ -1,0 +1,32 @@
+{
+  "name": "webpack5-react-full-project",
+  "version": "1.0.0",
+  "description": "webpack5",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build-dev": "webpack --mode development",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanwinder/webpack5-react-full-project.git"
+  },
+  "keywords": [
+    "webpack5",
+    "react",
+    "redux"
+  ],
+  "author": "Tanwinder Sidhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tanwinder/webpack5-react-full-project/issues"
+  },
+  "homepage": "https://github.com/Tanwinder/webpack5-react-full-project#readme",
+  "devDependencies": {
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
