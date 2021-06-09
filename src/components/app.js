@@ -4,7 +4,7 @@ import '../styles/index.scss'
 const App = () => {
     return(
         <div>
-            hello app
+            hello my app
         </div>
     )
 }
