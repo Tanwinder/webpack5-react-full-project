@@ -1,5 +1,11 @@
-const arr = [
-    'hello', 'mister'
-]
+import React from 'react';
+import {render} from 'react-dom'
 
-console.log(process.env.NODE_ENV,'arr---', arr);
+import App from './components/app'
+
+render(
+    <App />,
+    document.getElementById("root")
+);
+
+// console.log(['gdsdfsfsf'])
