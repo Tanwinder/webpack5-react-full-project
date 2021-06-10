@@ -11,7 +11,7 @@ body {
   margin: 0;
   background-color: variables.$bg;
   color: var(--text);
-  font-size: 26px;
+  font-size: var(--fontsize);
 }
 
 main {

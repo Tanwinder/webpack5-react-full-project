@@ -1,11 +1,20 @@
+import 'regenerator-runtime/runtime';
 import React from 'react';
 import {render} from 'react-dom'
 
 import App from './components/app'
 
-render(
-    <App />,
-    document.getElementById("root")
-);
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
-// console.log(['gdsdfsfsf'])
+import store from './store';
+
+
+render(
+  <Provider store={store} >
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('root')
+);
