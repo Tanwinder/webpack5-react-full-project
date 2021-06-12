@@ -1,20 +1,15 @@
 
-import {AUTH, LOG_OUT_USER} from '../../actions/actionTypes';
-// const {AUTH, LOG_OUT_USER} = obj;
-const initialState = {
-    userInfo: JSON.parse(localStorage.getItem('profile')) || null
-}
-export default (state= initialState, action) => {
+import {GETLIST} from '../../actions/actionTypes';
+// const initialState = {
+//     userInfo: JSON.parse(localStorage.getItem('profile')) || null
+// }
+export default (state= {items: []}, action) => {
     switch(action.type) {
-        case AUTH:
+        case GETLIST:
             return {
-                userInfo: action.payload
-            };
-        case LOG_OUT_USER:
-            localStorage.removeItem('profile');
-            return {
-                userInfo: null
-            };  
+                ...state,
+                items: action.payload
+            }    
         default:
             return state;
     }

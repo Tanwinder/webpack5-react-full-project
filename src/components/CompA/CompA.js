@@ -1,25 +1,26 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux'
+import {callList} from './compAaction'
+import {List} from '../../presentational/List';
 
 const CompA = () => {
-    const [state, setState] = useState('data');
+    const dispatch = useDispatch();
+    const [itemsVal, setItemsVal] = useState('even');
+    const items = useSelector(state => state?.compA?.items);
+    useEffect(() => {
+        dispatch(callList(itemsVal));
+    }, [itemsVal])
     const onClickBtn = (e) => {
         const gh = e.target?.dataset?.type;
-        setState(gh);
+        setItemsVal(gh);
     }
     return(
         <div>
             <div>
-                <button onClick={onClickBtn} data-type="data">compa</button>
-                <button onClick={onClickBtn} data-type="nodata">no data</button>
+                <button onClick={onClickBtn} data-type="even">Even</button>
+                <button onClick={onClickBtn} data-type="odd">Odd</button>
             </div>
-            <>
-            {
-                state === 'data' ?
-                <div>Data</div>
-                :
-                <div>No data</div>
-            }
-            </>
+            <List items={items}/>
         </div>
     )
 }
